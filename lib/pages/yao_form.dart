@@ -94,10 +94,83 @@ class _YaoFormState extends State<YaoForm> {
   }
 
   Widget _buildNamaField() {
-    return Container(
-      padding: const EdgeInsets.all(4.0),
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Container(
+        clipBehavior: Clip.antiAlias,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(20.0),
+          boxShadow: const [
+            BoxShadow(
+              color: Colors.black,
+              spreadRadius: 1,
+              blurRadius: 2,
+              offset: Offset(0, 3),
+            ),
+          ],
+        ),
+        child: TextFormField(
+          decoration: const InputDecoration(
+              labelText: 'Nama',
+              hintText: 'Masukkan Nama',
+              border: InputBorder.none,
+              contentPadding:
+                  EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0)),
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return "Tolong Isi Form";
+            }
+            return null;
+          },
+        ),
+      ),
+    );
+  }
+}
+
+Widget _buildAsalField() {
+  return Padding(
+    padding: const EdgeInsets.all(16.0),
+    child: Container(
       clipBehavior: Clip.antiAlias,
-      margin: const EdgeInsets.symmetric(horizontal: 24.0),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20.0),
+        boxShadow: const [
+          BoxShadow(
+            color: Colors.black,
+            spreadRadius: 1,
+            blurRadius: 2,
+            offset: Offset(0, 3),
+          ),
+        ],
+      ),
+      child: TextFormField(
+        onTap: () {},
+        readOnly: true,
+        decoration: const InputDecoration(
+            labelText: 'Instansi',
+            hintText: 'Asal Instansi',
+            border: InputBorder.none,
+            contentPadding:
+                EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0)),
+        validator: (value) {
+          if (value!.isEmpty) {
+            return "Tolong Isi Form";
+          }
+          return null;
+        },
+      ),
+    ),
+  );
+}
+
+Widget _buildKeperluanField() {
+  return Padding(
+    padding: const EdgeInsets.all(16.0),
+    child: Container(
+      clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(20.0),
@@ -112,226 +185,160 @@ class _YaoFormState extends State<YaoForm> {
       ),
       child: TextFormField(
         decoration: const InputDecoration(
-            labelText: 'Nama',
-            hintText: 'Masukkan Nama',
+            labelText: 'Keperluan',
+            hintText: 'Keperluan',
             border: InputBorder.none,
             contentPadding:
                 EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0)),
         validator: (value) {
-          if (value == null || value.isEmpty) {
+          if (value!.isEmpty) {
             return "Tolong Isi Form";
           }
           return null;
         },
       ),
-    );
-  }
-}
-
-Widget _buildAsalField() {
-  return Container(
-    padding: const EdgeInsets.all(4.0),
-    clipBehavior: Clip.antiAlias,
-    margin: const EdgeInsets.symmetric(horizontal: 24.0),
-    decoration: BoxDecoration(
-      color: Colors.white,
-      borderRadius: BorderRadius.circular(20.0),
-      boxShadow: const [
-        BoxShadow(
-          color: Colors.black,
-          spreadRadius: 1,
-          blurRadius: 2,
-          offset: Offset(0, 3),
-        ),
-      ],
-    ),
-    child: TextFormField(
-      onTap: () {},
-      readOnly: true,
-      decoration: const InputDecoration(
-          labelText: 'Instansi',
-          hintText: 'Asal Instansi',
-          border: InputBorder.none,
-          contentPadding:
-              EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0)),
-      validator: (value) {
-        if (value!.isEmpty) {
-          return "Tolong Isi Form";
-        }
-        return null;
-      },
-    ),
-  );
-}
-
-Widget _buildKeperluanField() {
-  return Container(
-    padding: const EdgeInsets.all(4.0),
-    clipBehavior: Clip.antiAlias,
-    margin: const EdgeInsets.symmetric(horizontal: 24.0),
-    decoration: BoxDecoration(
-      color: Colors.white,
-      borderRadius: BorderRadius.circular(20.0),
-      boxShadow: const [
-        BoxShadow(
-          color: Colors.black,
-          spreadRadius: 1,
-          blurRadius: 2,
-          offset: Offset(0, 3),
-        ),
-      ],
-    ),
-    child: TextFormField(
-      decoration: const InputDecoration(
-          labelText: 'Keperluan',
-          hintText: 'Keperluan',
-          border: InputBorder.none,
-          contentPadding:
-              EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0)),
-      validator: (value) {
-        if (value!.isEmpty) {
-          return "Tolong Isi Form";
-        }
-        return null;
-      },
     ),
   );
 }
 
 Widget _noTelpField() {
-  return Container(
-    padding: const EdgeInsets.all(4.0),
-    clipBehavior: Clip.antiAlias,
-    margin: const EdgeInsets.symmetric(horizontal: 24.0),
-    decoration: BoxDecoration(
-      color: Colors.white,
-      borderRadius: BorderRadius.circular(20.0),
-      boxShadow: const [
-        BoxShadow(
-          color: Colors.black,
-          spreadRadius: 1,
-          blurRadius: 2,
-          offset: Offset(0, 3),
-        ),
-      ],
-    ),
-    child: TextFormField(
-      keyboardType: TextInputType.phone,
-      decoration: const InputDecoration(
-          labelText: 'No.Telp',
-          hintText: 'Nomor Telepon',
-          border: InputBorder.none,
-          contentPadding:
-              EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0)),
-      validator: (value) {
-        if (value!.isEmpty) {
-          return "Tolong Isi Form";
-        }
-        return null;
-      },
+  return Padding(
+    padding: const EdgeInsets.all(16.0),
+    child: Container(
+      clipBehavior: Clip.antiAlias,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20.0),
+        boxShadow: const [
+          BoxShadow(
+            color: Colors.black,
+            spreadRadius: 1,
+            blurRadius: 2,
+            offset: Offset(0, 3),
+          ),
+        ],
+      ),
+      child: TextFormField(
+        keyboardType: TextInputType.phone,
+        decoration: const InputDecoration(
+            labelText: 'No.Telp',
+            hintText: 'Nomor Telepon',
+            border: InputBorder.none,
+            contentPadding:
+                EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0)),
+        validator: (value) {
+          if (value!.isEmpty) {
+            return "Tolong Isi Form";
+          }
+          return null;
+        },
+      ),
     ),
   );
 }
 
 Widget _buildDitemui() {
-  return Container(
-    padding: const EdgeInsets.all(4.0),
-    clipBehavior: Clip.antiAlias,
-    margin: const EdgeInsets.symmetric(horizontal: 24.0),
-    decoration: BoxDecoration(
-      color: Colors.white,
-      borderRadius: BorderRadius.circular(20.0),
-      boxShadow: const [
-        BoxShadow(
-          color: Colors.black,
-          spreadRadius: 1,
-          blurRadius: 2,
-          offset: Offset(0, 3),
-        ),
-      ],
-    ),
-    child: TextFormField(
-      decoration: const InputDecoration(
-          labelText: 'Ditemui',
-          hintText: 'Yang Ditemui',
-          border: InputBorder.none,
-          contentPadding:
-              EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0)),
-      validator: (value) {
-        if (value!.isEmpty) {
-          return "Tolong Isi Form";
-        }
-        return null;
-      },
+  return Padding(
+    padding: const EdgeInsets.all(16.0),
+    child: Container(
+      clipBehavior: Clip.antiAlias,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20.0),
+        boxShadow: const [
+          BoxShadow(
+            color: Colors.black,
+            spreadRadius: 1,
+            blurRadius: 2,
+            offset: Offset(0, 3),
+          ),
+        ],
+      ),
+      child: TextFormField(
+        decoration: const InputDecoration(
+            labelText: 'Ditemui',
+            hintText: 'Yang Ditemui',
+            border: InputBorder.none,
+            contentPadding:
+                EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0)),
+        validator: (value) {
+          if (value!.isEmpty) {
+            return "Tolong Isi Form";
+          }
+          return null;
+        },
+      ),
     ),
   );
 }
 
 Widget _jumlahTamu() {
-  return Container(
-    padding: const EdgeInsets.all(4.0),
-    clipBehavior: Clip.antiAlias,
-    margin: const EdgeInsets.symmetric(horizontal: 24.0),
-    decoration: BoxDecoration(
-      color: Colors.white,
-      borderRadius: BorderRadius.circular(20.0),
-      boxShadow: const [
-        BoxShadow(
-          color: Colors.black,
-          spreadRadius: 1,
-          blurRadius: 2,
-          offset: Offset(0, 3),
-        ),
-      ],
-    ),
-    child: TextFormField(
-      keyboardType: TextInputType.number,
-      decoration: const InputDecoration(
-          labelText: 'Jumlah Tamu',
-          hintText: 'Jumlah Tamu',
-          border: InputBorder.none,
-          contentPadding:
-              EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0)),
-      validator: (value) {
-        if (value!.isEmpty) {
-          return "Tolong Isi Form";
-        }
-        return null;
-      },
+  return Padding(
+    padding: const EdgeInsets.all(16.0),
+    child: Container(
+      clipBehavior: Clip.antiAlias,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20.0),
+        boxShadow: const [
+          BoxShadow(
+            color: Colors.black,
+            spreadRadius: 1,
+            blurRadius: 2,
+            offset: Offset(0, 3),
+          ),
+        ],
+      ),
+      child: TextFormField(
+        keyboardType: TextInputType.number,
+        decoration: const InputDecoration(
+            labelText: 'Jumlah Tamu',
+            hintText: 'Jumlah Tamu',
+            border: InputBorder.none,
+            contentPadding:
+                EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0)),
+        validator: (value) {
+          if (value!.isEmpty) {
+            return "Tolong Isi Form";
+          }
+          return null;
+        },
+      ),
     ),
   );
 }
 
 Widget _buildKetTextfield() {
-  return Container(
-    padding: const EdgeInsets.all(4.0),
-    clipBehavior: Clip.antiAlias,
-    margin: const EdgeInsets.symmetric(horizontal: 24.0),
-    decoration: BoxDecoration(
-      color: Colors.white,
-      borderRadius: BorderRadius.circular(20.0),
-      boxShadow: const [
-        BoxShadow(
-          color: Colors.black,
-          spreadRadius: 1,
-          blurRadius: 2,
-          offset: Offset(0, 3),
-        ),
-      ],
-    ),
-    child: TextFormField(
-      decoration: const InputDecoration(
-          labelText: 'Keterangan',
-          hintText: 'Keterangan',
-          border: InputBorder.none,
-          contentPadding:
-              EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0)),
-      validator: (value) {
-        if (value!.isEmpty) {
-          return "Tolong Isi Form";
-        }
-        return null;
-      },
+  return Padding(
+    padding: const EdgeInsets.all(16.0),
+    child: Container(
+      clipBehavior: Clip.antiAlias,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20.0),
+        boxShadow: const [
+          BoxShadow(
+            color: Colors.black,
+            spreadRadius: 1,
+            blurRadius: 2,
+            offset: Offset(0, 3),
+          ),
+        ],
+      ),
+      child: TextFormField(
+        decoration: const InputDecoration(
+            labelText: 'Keterangan',
+            hintText: 'Keterangan',
+            border: InputBorder.none,
+            contentPadding:
+                EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0)),
+        validator: (value) {
+          if (value!.isEmpty) {
+            return "Tolong Isi Form";
+          }
+          return null;
+        },
+      ),
     ),
   );
 }
@@ -351,7 +358,7 @@ class _MyTextFieldState extends State<MyTextField> {
   ];
   String? _selectedData;
 
-  final TextEditingController _textEditingController = TextEditingController();
+  final TextEditingController _aslC = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -375,7 +382,7 @@ class _MyTextFieldState extends State<MyTextField> {
               ],
             ),
             child: TextFormField(
-              controller: _textEditingController,
+              controller: _aslC,
               onTap: () {
                 Navigator.push(
                   context,
@@ -386,7 +393,7 @@ class _MyTextFieldState extends State<MyTextField> {
                       onSelectedData: (selectedData) {
                         setState(() {
                           _selectedData = selectedData;
-                          _textEditingController.text = _selectedData!;
+                          _aslC.text = _selectedData!;
                         });
                       },
                     ),
